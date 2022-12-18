@@ -3,6 +3,7 @@ import string
 import shutil
 import os
 
+#Add more letters to be used here!
 letters = string.ascii_lowercase + " " + string.ascii_uppercase #Get the letters we care about 
 
 def makeFont(base_font, out_dir = 'fonts'):
