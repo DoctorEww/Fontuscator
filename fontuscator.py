@@ -3,8 +3,7 @@ import string
 import shutil
 import os
 
-#Add more letters to be used here!
-letters = string.ascii_lowercase + " " + string.ascii_uppercase #Get the letters we care about 
+letters = string.ascii_lowercase + " " +"/" + ":" + "!" + "."+ string.ascii_uppercase#Get the letters we care about 
 
 def makeFont(base_font, out_dir = 'fonts'):
     shutil.copyfile(base_font, "temp.ttf")
@@ -37,7 +36,9 @@ def makeHTMLSPAN(toWrite,toSee):
             toReturn += "<span style=\"font-family: '"+ str((letters.index(toSee[i]) - letters.index(toWrite[i]) + len(letters))) +"';\">"+ toWrite[i] +"</span>"
     return toReturn
 
-
+#Creates fonts dir with all of the fonts needed. Based on a passed in existing font.
 makeFont('arial.ttf')
+# Creates test.css to point to the fonts. (add to html)
 makeCSS("test.css")
-print(makeHTMLSPAN("Thank you for liking this article it means alot", "would you like to buy some car insurance?"))
+# Add this to your HTML
+print(makeHTMLSPAN("non sus text to pass email filter.", "you should email me your money thx"))
